@@ -1,0 +1,15 @@
+.about-preview {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.skills-highlight {
+  margin: 1rem auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.skills-highlight p {
+  margin: 0.5rem 0;
+}

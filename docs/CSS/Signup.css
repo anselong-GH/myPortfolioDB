@@ -1,0 +1,98 @@
+/* Signup Page Styling */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #2e89de, #2b24f1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Signup page container */
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    /* different gradient */
+    padding-top: 60px;
+}
+
+/* Signup box */
+.signup-box {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    width: 360px;
+    text-align: center;
+}
+
+.signup-box h1 {
+    margin-bottom: 1rem;
+    color: #667eea;
+}
+
+.signup-box label {
+    display: block;
+    text-align: left;
+    margin: 0.5rem 0 0.2rem;
+    font-weight: bold;
+    color: #444;
+}
+
+.signup-box button {
+    width: 100%;
+}
+
+form {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    width: 360px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 1rem;
+    color: #2e89de;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin: 0.5rem 0 0.2rem;
+    font-weight: bold;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+input:focus {
+    border-color: #2e89de;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 0.9rem;
+    background: #2b24f1;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2e89de;
+}
