@@ -32,9 +32,14 @@
     <div class="container">
         <h1>Upload any FILE to Preview</h1>
 
-        <div class="upload-box">
-            <p>Select a file to preview instantly</p>
-            <input type="file" id="fileInput">
+        <div class="upload-box" id="uploadBox">
+            <p>Select/Drag & Drop a file to preview instantly</p>
+            <input type="file" id="fileInput" multiple>
+        </div>
+
+        <!-- Progress Bar -->
+        <div id="progress-container">
+            <div id="progress-bar"></div>
         </div>
 
         <div id="preview" class="preview"></div>
