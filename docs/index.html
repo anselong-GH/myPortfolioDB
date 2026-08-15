@@ -6,41 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Ansel Ong">
     <title>Portfolio Showcase</title>
-    <link rel="stylesheet" href="CSS/Home.css">
-    `
+    <link rel="stylesheet" href="CSS/index.css">
 </head>
 
 <body>
 
     <nav class="navbar">
-        <div class="logo">My Portfolio</div>
+        <div class="logo">MewA</div> <!--AMew-->
         <div class="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </div>
         <div class="nav-links">
-            <a href="index.html" class="active">Home</a>
+            <a href="Home.html" class="active">Home</a>
             <a href="AboutMe.html">About Me</a>
             <a href="Portfolio.html">Portfolio</a>
             <a href="Privacy.html">Privacy Policy</a>
             <a href="Login.html">Login</a>
             <a href="Signup.html">Sign up</a>
+            <select id="language-select">
+                <option value="en" selected>English</option>
+                <option value="zh">中文</option>
+                <option value="ms">Malay</option>
+            </select>
         </div>
     </nav>
 
     <main>
-
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <h1>Welcome to My Portfolio</h1>
+                <h1 id="title">Welcome to My Portfolio</h1>
 
-                <h2>Hi, I'm Ansel Ong</h2>
+                <h2 id="welcome">Hi, I'm Ansel Ong</h2>
 
                 <p>
                     An aspiring Software Developer and IT Professional with a passion
-                    for building practical, user-friendly, and innovative digital solutions.
+                    for building practical, eco-friendly, user-friendly, and innovative digital solutions.
                     This portfolio showcases my projects, technical skills, and
                     continuous learning journey in technology.
                 </p>
@@ -146,14 +149,20 @@
             </a>
 
         </section>
-
     </main>
 
     <footer>
-        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> -- MewA. All rights reserved.</p>
     </footer>
 
-    <script src="JS/Home.js"></script>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+
+
+    <script src="JS/index.js"></script>
+    <script src="JS/Language.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 /* Signup Page Styling */
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #2e89de, #2b24f1);
+    background: linear-gradient(135deg, #4682B4, #C0C0C0);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +15,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: calc(100vh - 60px);
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #4682B4, #C0C0C0);
     /* different gradient */
     padding-top: 60px;
 }
@@ -78,14 +78,14 @@ input {
 }
 
 input:focus {
-    border-color: #2e89de;
+    border-color: #4682B4;
     outline: none;
 }
 
 button {
     width: 100%;
     padding: 0.9rem;
-    background: #2b24f1;
+    background: #4682B4;
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -94,5 +94,5 @@ button {
 }
 
 button:hover {
-    background: #2e89de;
+    background: #4682B4;
 }

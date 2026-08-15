@@ -12,7 +12,7 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">My Portfolio</div>
+        <div class="logo">MewA</div> <!--AMew-->
         <div class="hamburger">
             <span></span>
             <span></span>
@@ -25,7 +25,7 @@
             <a href="Privacy.html">Privacy Policy</a>
             <a href="Login.html">Login</a>
             <a href="Signup.html">Sign up</a>
-            <select id ="language-select">
+            <select id="language-select">
                 <option value="en" selected>English</option>
                 <option value="zh">中文</option>
                 <option value="ms">Malay</option>
@@ -152,8 +152,14 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> -- MewA. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+
 
     <script src="../public/JS/Home.js"></script>
     <script src="../public/JS/Language.js"></script>
