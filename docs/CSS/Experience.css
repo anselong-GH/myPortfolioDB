@@ -1,0 +1,97 @@
+/* -------------------------
+|    WORKING EXPERIENCE    |
+---------------------------*/
+.experience-section {
+    background-color: white;
+    padding: 60px 20px;
+}
+
+.experience-section h2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: var(--primary);
+    margin-bottom: 50px;
+}
+
+.experience-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.experience-card {
+    background: linear-gradient(135deg, var(--primary)15 0%, var(--accent)15 100%);
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 5px solid var(--primary);
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 20px rgba(70, 130, 180, 0.15);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.experience-header h3 {
+    color: #333;
+    font-size: 1.4em;
+    margin: 0;
+}
+
+.experience-date {
+    background-color: var(--primary);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.experience-company {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.experience-description {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+}
+
+.experience-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.experience-skills li {
+    background-color: var(--primary);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+}

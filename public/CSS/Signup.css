@@ -1,0 +1,79 @@
+@import url('Global.css');
+@import url('Color.css');
+@import url('Responsive.css');
+
+/*---------------------
+|   SIGNUP CONTAINER   |
+----------------------*/
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* viewport minus navbar */
+    margin-top: 60px;           /* offset for fixed navbar */
+    background: linear-gradient(135deg, #FFC0CB, #C0C0C0);
+}
+
+/*---------------
+|   SIGNUP BOX   |
+----------------*/
+.signup-box {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    width: 360px;
+    max-width: 90%;             /* responsive shrink on small screens */
+    text-align: center;
+}
+
+/*------------
+|   HEADER   |
+-------------*/
+.signup-header {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #667eea;
+    text-align: center;
+}
+
+.signup-box label {
+    display: block;
+    text-align: left;
+    margin: 0.5rem 0 0.2rem;
+    font-weight: bold;
+    color: #444;
+}
+
+.signup-box input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.signup-box input:focus {
+    border-color: #FFC0CB;
+    outline: none;
+}
+
+/*------------
+|   BUTTON   |
+-------------*/
+.signup-box button {
+    width: 100%;
+    padding: 0.9rem;
+    background: #FFC0CB;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.signup-box button:hover {
+    background: #ff99aa;
+}
