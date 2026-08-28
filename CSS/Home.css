@@ -1,0 +1,107 @@
+@import url('Color.css');
+@import url('Responsive.css');
+@import url('Hero.css');
+@import url('Overview.css');
+@import url('FAQ.css');
+@import url('CTA.css');
+@import url('Global.css');
+
+/*--------------
+|   Buttons    |
+---------------*/
+button,
+.btn,
+.btn-secondary {
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+}
+
+button,
+.btn {
+    background: var(--primary);
+    color: var(--text);
+    /* Black text on pink */
+    border: none;
+}
+
+button:hover,
+.btn:hover {
+    background: var(--secondary);
+    color: var(--text);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--secondary);
+    border: 2px solid var(--secondary);
+}
+
+.btn-secondary:hover {
+    background: var(--secondary);
+    color: var(--text);
+}
+
+/*-------------
+|   Inputs    |
+--------------*/
+input {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    transition: border-color var(--transition);
+    color: var(--text);
+}
+
+input:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+
+/*-----------------------
+|   Featured Projects   |
+------------------------*/
+.featured-projects {
+    padding: 2rem;
+}
+
+.sub-header {
+    font-size: 0.9em;
+    color: #666;
+    font-style: italic;
+    margin-top: -0.5em;
+    margin-bottom: 0.5em;
+}
+
+.sub-note {
+    font-size: 0.85em;
+    /* smaller than normal text */
+    color: #666;
+    /* soft gray */
+    font-style: italic;
+    /* italic for emphasis */
+    margin-bottom: 0.5em;
+    /* spacing between note and button */
+    text-align: center;
+    /* center align above the button */
+}
+
+
+
+/*-------------------
+|   Current Focus   |
+--------------------*/
+.current-focus {
+    background: var(--accent);
+    color: var(--text);
+    /* Black text */
+}
+
+.current-focus ul {
+    list-style: disc;
+    margin-left: 2rem;
+}

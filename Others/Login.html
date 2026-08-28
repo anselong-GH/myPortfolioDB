@@ -5,20 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Login Page</title>
+<<<<<<< HEAD:Login.html
+    <link rel="stylesheet" href="../public/CSS/Home.css">
+    <link rel="stylesheet" href="../public/CSS/Login.css">
+    <link rel="stylesheet" href="../public/CSS/Color.css">
+
+=======
     <link rel="stylesheet" href="CSS/Home.css">
     <link rel="stylesheet" href="CSS/Login.css">
     
+>>>>>>> 37a634c32d44b49991b694ebe417a68064c260b7:Others/Login.html
 
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="logo">My Portfolio</div>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+    <!-----------------------------
+     |   PLACEHOLDER: NAV-LINKS   |
+     ------------------------------>
+    <div id="navbar"></div>
+
+
+    <div class="login-container">
+        <div class="login-box">
+            <h1 class="login-header">Login</h1>
+            <form action="/login" method="POST">
+                <label>Username:</label>
+                <input type="text" name="username" required>
+
+                <label>Password:</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" placeholder="Enter password" required>
+                    <button type="button" id="togglePassword" aria-label="Show password"></button>
+                </div>
+                <label class="remember">
+                    <input type="checkbox" id="rememberMe"> Remember ME!!
+                </label>
+
+                <button type="submit">Login</button>
+            </form>
         </div>
+<<<<<<< HEAD:Login.html
+    </div>
+
+    <!------------------------------------
+    |   PLACEHOLDER: COPY RIGHT FOOTER   |
+    -------------------------------------->
+    <div id="footer"></div>
+
+    <!--------------------
+     |   LINKAGE TO JS   |
+     --------------------->
+    <script src="../public/JS/Login.js"></script>
+    <script src="../public/JS/Home.js"></script>
+=======
         <div class="nav-links">
         <a href="index.html" class="active">Home</a>
         <a href="AboutMe.html">About Me</a>
@@ -42,6 +81,7 @@
     <!--Linking the js-->
     <script src="JS/Login.js"></script>
     <script src="JS/Home.js"></script>
+>>>>>>> 37a634c32d44b49991b694ebe417a68064c260b7:Others/Login.html
 
 </body>
 
