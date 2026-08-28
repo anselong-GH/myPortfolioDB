@@ -9,7 +9,7 @@ function loadNavbar() {
         <span></span>
       </div>
       <div class="nav-links">
-        <a href="Home.html" class="active">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="AboutMe.html">About Me</a>
         <a href="Privacy.html">Privacy Policy</a>
         <a href="Login.html">Login</a>
