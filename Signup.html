@@ -7,38 +7,38 @@
     <title>Welcome to Login Page</title>
     <link rel="stylesheet" href="../public/CSS/Home.css">
     <link rel="stylesheet" href="../public/CSS/Signup.css">
+    <link rel="stylesheet" href="../public/CSS/Color.css">
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="logo">My Portfolio</div>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+    <!-----------------------------
+     |   PLACEHOLDER: NAV-LINKS   |
+     ------------------------------>
+    <div id="navbar"></div>
+
+
+    <div class="signup-container">
+        <div class="signup-box">
+            <h1 class="signup-header">Sign Up</h1>
+            <form action="/signup" method="POST">
+                <label>Username:</label>
+                <input type="text" name="username" required>
+
+                <label>Password:</label>
+                <input type="password" name="password" required>
+
+                <label>Email:</label>
+                <input type="email" name="email" required>
+
+                <button type="submit">Register</button>
+            </form>
         </div>
-        <div class="nav-links">
-        <a href="Home.html" class="active">Home</a>
-        <a href="AboutMe.html">About Me</a>
-        <a href="Portfolio.html">Portfolio</a>
-        <a href="Privacy.html">Privacy Policy</a>
-        <a href="Login.html">Login</a>
-        <a href="Signup.html">Sign up</a>
-        </div>
-    </nav>
-    
-    <main>
-        <h1>Sign Up</h1>
-        <form action="/signup" method="POST">  
-            <label>Username:</label>
-            <input type="text" name="username" required>
-            <label>Password:</label>
-            <input type="password" name="password" required>
-            <label>Email:</label>
-            <input type="email" name="email" required>
-            <button type="submit">Register</button>
-        </form>
-    </main>
+    </div>
+    <!------------------------------------
+    |   PLACEHOLDER: COPY RIGHT FOOTER   |
+    -------------------------------------->
+    <div id="footer"></div>
+
     <!--Linking the js-->
     <script src="../public/JS/Signup.js"></script>
     <script src="../public/JS/Home.js"></script>

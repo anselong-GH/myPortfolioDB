@@ -1,0 +1,20 @@
+:root {
+    --primary: #FFC0CB;
+    --secondary: #C0C0C0;
+    --background: #f9f9f9;
+    --accent: #f78b9d;
+    --highlight: #ecb4ff;
+    --text: #000000;
+    --white: #fff;
+    --radius: 6px;
+    --shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    --transition: 0.3s ease;
+}
+
+button {
+  background: var(--primary);
+  color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
