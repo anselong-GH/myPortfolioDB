@@ -1,0 +1,298 @@
+/*------------------------------
+   Reset & Variables
+-------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('Color.css');
+
+/*---------------------------
+   Global Styles
+-----------------------------*/
+body {
+    font: 400 1rem 'Segoe UI', sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    padding-top: 70px;
+    /* offset for fixed navbar */
+}
+
+section {
+    display: block;
+    margin: 4rem 0;
+    padding: 2rem;
+}
+
+/*-----------------------------
+   Navbar
+------------------------------*/
+.navbar {
+    background: var(--secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 500;
+}
+
+.logo {
+    font: bold 1.5rem 'Segoe UI', sans-serif;
+    color: var(--text);
+    /* Black text for contrast */
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    transition: max-height var(--transition);
+}
+
+.nav-links a {
+    color: var(--text);
+    /* Black links */
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color var(--transition), border-bottom var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active,
+.nav-links a:focus {
+    color: var(--text);
+    border-bottom: 2px solid var(--accent);
+}
+
+/*-----------------------------
+   Buttons
+------------------------------*/
+button,
+.btn,
+.btn-secondary {
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+}
+
+button,
+.btn {
+    background: var(--primary);
+    color: var(--text);
+    /* Black text on pink */
+    border: none;
+}
+
+button:hover,
+.btn:hover {
+    background: var(--secondary);
+    color: var(--text);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--secondary);
+    border: 2px solid var(--secondary);
+}
+
+.btn-secondary:hover {
+    background: var(--secondary);
+    color: var(--text);
+}
+
+/*-----------------------------
+   Inputs
+------------------------------*/
+input {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    transition: border-color var(--transition);
+    color: var(--text);
+}
+
+input:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+/*-----------------------------
+   Hamburger (Mobile)
+------------------------------*/
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text);
+    /* Black bars */
+    transition: transform var(--transition), opacity var(--transition);
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/*-----------------------------
+   Hero Section
+------------------------------*/
+.hero {
+    background: linear-gradient(to right, var(--secondary), var(--primary));
+    color: var(--text);
+    /* Black text */
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+/*-----------------------------
+   Overview Cards
+------------------------------*/
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.overview-card,
+.project-card {
+    background: var(--white);
+    color: var(--text);
+    /* Black text */
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/*-----------------------------
+   Featured Projects
+------------------------------*/
+.featured-projects {
+    padding: 2rem;
+}
+
+/*-----------------------------
+   Current Focus
+------------------------------*/
+.current-focus {
+    background: var(--accent);
+    color: var(--text);
+    /* Black text */
+}
+
+.current-focus ul {
+    list-style: disc;
+    margin-left: 2rem;
+}
+
+/*-----------------------------
+   Call To Action
+------------------------------*/
+.cta {
+    text-align: center;
+    background: var(--primary);
+    color: var(--text);
+    /* Black text */
+    margin-top: 5rem;
+    padding: 5rem 2rem;
+}
+
+.cta h2 {
+    margin-bottom: 1.5rem;
+}
+
+.cta button,
+.cta .btn {
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+.cta .btn.view-project {
+    background: #000;
+    /* Solid black box */
+    color: #FFF;
+    /* White text */
+    border: none;
+}
+
+.cta .btn.view-project:hover {
+    background: var(--highlight);
+    color: var(--text);
+}
+
+/*-----------------------------
+   Footer
+------------------------------*/
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: var(--secondary);
+    color: var(--text);
+    /* Black text */
+}
+
+/*-----------------------------
+   Responsive
+------------------------------*/
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        max-height: 0;
+        background: var(--secondary);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+    }
+
+    .nav-links.active {
+        max-height: 500px;
+    }
+
+    .nav-links a {
+        padding: 0.5rem 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}

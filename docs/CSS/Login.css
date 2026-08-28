@@ -1,30 +1,37 @@
-/* Login Page Styling */
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #2e89de, #2b24f1);
-    /* deep blue gradient */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
+@import url('Global.css');
+@import url('Color.css');
+@import url('Responsive.css');
 
-/* Login page container */
+/*---------------------
+|   LOGIN CONTAINER   |
+----------------------*/
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 60px);
-    /* subtract navbar height */
-    background: linear-gradient(135deg, #2e89de, #2b24f1);
-    padding-top: 60px;
-    /* prevent overlap with navbar */
+    height: calc(100vh - 60px);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    margin-top: 60px;
 }
 
-/* Login box */
+/*----------------
+|   NAVBAR FIX   |
+-----------------*/
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #ccc;
+    z-index: 1000;
+}
+
+/*---------------
+|   LOGIN BOX   |
+----------------*/
 .login-box {
-    background: #fff;
+    background: var(--secondary);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
@@ -32,9 +39,12 @@ body {
     text-align: center;
 }
 
-.login-box h1 {
-    margin-bottom: 1rem;
-    color: #2b24f1;
+.login-header {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #4682B4;
+    text-align: center;
 }
 
 .login-box label {
@@ -45,56 +55,101 @@ body {
     color: #444;
 }
 
-.login-box button {
-    width: 100%;
-}
-
-form {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-    width: 320px;
-    text-align: center;
-}
-
-h1 {
-    margin-bottom: 1rem;
-    color: #2b24f1;
-}
-
-label {
-    display: block;
-    text-align: left;
-    margin: 0.5rem 0 0.2rem;
-    font-weight: bold;
+/* Align checkbox + text inline */
+.login-box label.remember {
+    display: flex;
+    /* put checkbox + text side by side */
+    align-items: center;
+    /* vertical center */
+    font-weight: normal;
+    /* lighter than field labels */
+    margin: 0.5rem 0;
+    /* spacing around */
     color: #444;
+    cursor: pointer;
+    /* clickable label */
 }
 
-input {
+.login-box label.remember input[type="checkbox"] {
+    margin-right: 8px;
+    /* space between box and text */
+}
+
+/*--------------------
+|   GENERAL INPUTS   |
+---------------------*/
+.login-box input {
     width: 100%;
     padding: 0.7rem;
-    margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
 }
 
-input:focus {
-    border-color: #2b24f1;
+.login-box input:focus {
+    border-color: #4682B4;
     outline: none;
 }
 
-button {
+/*------------------
+|   LOGIN BUTTON   |
+-------------------*/
+.login-box button[type="submit"] {
     width: 100%;
     padding: 0.8rem;
-    background: #2b24f1;
+    background: #FFC0CB;
     color: #fff;
     border: none;
     border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-button:hover {
-    background: #2b24f1;
+.login-box button[type="submit"]:hover {
+    background: #ff99aa;
+}
+
+/*-----------------------------------
+|   PASSWORD FIELD + TOGGLE BUTTON  |
+------------------------------------*/
+.password-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.password-container input {
+    flex: 1;
+    margin-bottom: 0;
+    /* prevent double spacing */
+}
+
+#togglePassword {
+    margin-left: 8px;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--accent);
+    line-height: 1;
+    flex-shrink: 0;
+    /* keeps eye from overlapping */
+}
+
+#togglePassword::before {
+    content: "👁";
+    /* eye open */
+}
+
+#togglePassword.active::before {
+    content: "🙈";
+    /* eye closed */
+}
+
+#togglePassword:hover {
+    color: #000;
 }

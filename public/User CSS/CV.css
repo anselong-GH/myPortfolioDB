@@ -1,0 +1,44 @@
+/* Modern */
+.cv-modern {
+    font-family: Helvetica, sans-serif;
+    color: #333;
+    max-width: 800px;
+    margin: auto;
+}
+
+.cv-modern h2 {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Creative */
+.cv-creative {
+    font-family: Poppins, sans-serif;
+    background: #fdfdfd;
+    max-width: 800px;
+    margin: auto;
+}
+
+.cv-creative header {
+    background: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.cv-creative h2 {
+    color: #4CAF50;
+}
+
+/* Classic */
+.cv-classic {
+    font-family: Georgia, serif;
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.cv-classic h2 {
+    text-transform: uppercase;
+    font-size: 1.2em;
+}

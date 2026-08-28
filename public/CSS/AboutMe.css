@@ -1,21 +1,20 @@
+
+@import url('Color.css');
+@import url('Responsive.css');
+@import url('Profile.css');
+@import url('TechSkills.css');
+@import url('Experience.css');
+@import url('Achievements.css');
+@import url('Volunteering.css');
+@import url('Contact.css');
+@import url("Global.css");
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    --primary: #d07cee;
-    --secondary: #333333;
-    --background: #f9f9f9;
-    --accent: #87CEEB;
-    --highlight: #8A2BE2;
-    --text: #F5F5F5;
-    --white: #fff;
-    --radius: 6px;
-    --shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    --transition: 0.3s ease;
-}
 
 body {
     padding-top: 60px;
@@ -31,7 +30,7 @@ button {
 }
 
 header {
-    background: linear-gradient(135deg, #AA60E7 0%, #C0C0C0 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
     color: #FFFFFF;
     padding: 50px 20px;
     text-align: center;
@@ -70,7 +69,7 @@ header h1 {
     display: none !important;
     position: absolute;
     right: 0;
-    background-color: #AA60E7;
+    background-color: var(--primary);
     min-width: 200px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1000;
@@ -87,7 +86,7 @@ header h1 {
     color: white;
     padding: 15px 20px;
     border: none;
-    background-color: #4682B4;
+    background-color: var(--primary);
     cursor: pointer;
     width: 100%;
     text-align: left;
@@ -98,12 +97,12 @@ header h1 {
 }
 
 .dropdown-content .nav-btn:hover {
-    background-color: #4682B4;
+    background-color: var(--primary);
 }
 
 .dropdown-content .nav-btn.active {
-    background-color: #4682B4;
-    border-left: 4px solid #C0C0C0;
+    background-color: var(--highlight);
+    border-left: 4px solid var(--accent);
 }
 
 @media (max-width: 768px) {
@@ -115,279 +114,4 @@ header h1 {
         top: 15px;
         right: 15px;
     }
-}
-
-/*  PROFILE SECTION */
-.profile-section {
-    background-color: white;
-    padding: 60px 20px;
-}
-
-.profile-container {
-    max-width: 900px;
-    margin: 0 auto;
-    background: linear-gradient(135deg, #4682B415 0%, #C0C0C015 100%);
-    padding: 30px;
-    border-radius: 12px;
-    border-left: 5px solid #4682B4;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    transition: all 0.3s ease;
-}
-
-.profile-container:hover {
-    transform: translateX(10px);
-    box-shadow: 0 8px 20px rgba(70, 130, 180, 0.15);
-}
-
-.profile-pic img {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-.profile-info h1 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.profile-info h2 {
-    font-size: 1.2em;
-    color: #4682B4;
-    margin-bottom: 15px;
-}
-
-.bio {
-    color: #666;
-    line-height: 1.8;
-    font-size: 0.95em;
-}
-
-/* TECHNICAL SKILLS SECTION */
-.skills-section {
-    background-color: white;
-    padding: 60px 20px;
-}
-
-.skills-section h2 {
-    text-align: center;
-    font-size: 2.5em;
-    color: #4682B4;
-    /* same highlight color */
-    margin-bottom: 50px;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 25px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.skill-card {
-    background: linear-gradient(135deg, #4682B415 0%, #C0C0C015 100%);
-    padding: 20px;
-    border-radius: 12px;
-    border-left: 5px solid #4682B4;
-    text-align: center;
-    font-weight: 600;
-    font-size: 1.1em;
-    color: #333;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-}
-
-.skill-card:hover {
-    transform: translateX(10px);
-    box-shadow: 0 8px 20px rgba(70, 130, 180, 0.15);
-    background: linear-gradient(135deg, #4682B425 0%, #C0C0C025 100%);
-}
-
-
-
-/* WORKING EXPERIENCE SECTION */
-.experience-section {
-    background-color: white;
-    padding: 60px 20px;
-}
-
-.experience-section h2 {
-    text-align: center;
-    font-size: 2.5em;
-    color: #4682B4;
-    margin-bottom: 50px;
-}
-
-.experience-content {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.experience-card {
-    background: linear-gradient(135deg, #4682B415 0%, #C0C0C015 100%);
-    padding: 30px;
-    border-radius: 12px;
-    border-left: 5px solid #4682B4;
-    margin-bottom: 25px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-}
-
-.experience-card:hover {
-    transform: translateX(10px);
-    box-shadow: 0 8px 20px rgba(70, 130, 180, 0.15);
-}
-
-.experience-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.experience-header h3 {
-    color: #333;
-    font-size: 1.4em;
-    margin: 0;
-}
-
-.experience-date {
-    background-color: #4682B4;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.9em;
-    font-weight: 600;
-}
-
-.experience-company {
-    color: #4682B4;
-    font-weight: 600;
-    font-size: 1.1em;
-    margin-bottom: 15px;
-}
-
-.experience-description {
-    color: #666;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    font-size: 0.95em;
-}
-
-.experience-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.experience-skills li {
-    background-color: #4682B4;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.9em;
-    font-weight: 500;
-}
-
-@media (max-width: 768px) {
-    .experience-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-}
-
-/*ACHIEVEMENTS SECTION*/
-.achievements-section {
-    background-color: white;
-    padding: 60px 20px;
-}
-
-.achievements-section h2 {
-    text-align: center;
-    font-size: 2.5em;
-    color: #4682B4;
-    margin-bottom: 50px;
-}
-
-.achievement-card {
-    background: linear-gradient(135deg, #4682B415 0%, #C0C0C015 100%);
-    padding: 25px;
-    border-radius: 12px;
-    border-left: 5px solid #4682B4;
-    margin-bottom: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-}
-
-.achievement-card:hover {
-    transform: translateX(10px);
-    box-shadow: 0 8px 20px rgba(70, 130, 180, 0.15);
-}
-
-/*VOLUNTEERING SECTION*/
-.volunteering-section {
-    background-color: white;
-    padding: 60px 20px;
-}
-
-.volunteering-section h2 {
-    text-align: center;
-    font-size: 2.5em;
-    color: #4682B4;
-    margin-bottom: 50px;
-}
-
-.volunteering-card {
-    background: linear-gradient(135deg, #4682B415 0%, #C0C0C015 100%);
-    padding: 25px;
-    border-radius: 12px;
-    border-left: 5px solid #4682B4;
-    margin-bottom: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-}
-
-.volunteering-card:hover {
-    transform: translateX(10px);
-    box-shadow: 0 8px 20px rgba(70, 130, 180, 0.15);
-}
-
-/*CONTACT SECTION*/
-.contact-section {
-    background-color: white;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.contact-section h2 {
-    font-size: 2.5em;
-    color: #4682B4;
-    margin-bottom: 30px;
-}
-
-.contact-btn {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 25px;
-    background: linear-gradient(135deg, #4682B4 0%, #C0C0C0 100%);
-    color: white;
-    border-radius: 25px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.contact-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(70, 130, 180, 0.3);
 }

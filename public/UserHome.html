@@ -5,150 +5,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Ansel Ong">
-    <title>Portfolio Showcase</title>
+    <title>User Home</title>
     <link rel="stylesheet" href="CSS/Home.css">
+    <link rel="stylesheet" href="User CSS/UserHome.css">
 </head>
 
 <body>
 
-    <nav class="navbar">
-        <div class="logo">My Portfolio</div>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+    <div id="navbar"></div>
+
+    <section class="user-home">
+        <header>
+            <h2>Welcome back, [Username]</h2>
+            <p>Your digital CV journey starts here. Explore themes, edit your profile, and manage your projects.</p>
+        </header>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <a href="AboutMe.html" class="btn">Edit About Me</a>
+            <a href="UploadCV.html" class="btn">Upload CV</a>
+            <a href="Projects.html" class="btn">View My Projects</a>
         </div>
-        <div class="nav-links">
-            <a href="UserHome.html" class="active">Home</a>
-            <a href="UserAboutMe.html">About Me</a>
-            <a href="UserPortfolio.html">Portfolio</a>
-            <a href="Logout.html">Log Out</a>
-        </div>
-    </nav>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Welcome to My Portfolio</h1>
+        <!-- CV Themes Showcase -->
+        <section class="cv-themes">
+            <h3>Available CV Themes</h3>
+            <p>Preview how your CV looks in different styles. Choose the one that best fits your career goals.</p>
 
-                <h2>Hi, I'm Ansel Ong</h2>
+            <div class="theme-gallery">
+                <div class="theme-card cv-modern">
+                    <h4>Modern Theme</h4>
+                    <p>Clean, professional layout with simple typography. Perfect for corporate roles.</p>
+                    <div class="cv-preview">[Preview of CV in modern style]</div>
+                </div>
 
-                <p>
-                    An aspiring Software Developer and IT Professional with a passion
-                    for building practical, eco-friendly, user-friendly, and innovative digital solutions.
-                    This portfolio showcases my projects, technical skills, and
-                    continuous learning journey in technology.
-                </p>
+                <div class="theme-card cv-creative">
+                    <h4>Creative Theme</h4>
+                    <p>Bright colors and bold headings. Great for design, marketing, and creative industries.</p>
+                    <div class="cv-preview">[Preview of CV in creative style]</div>
+                </div>
 
-                <div class="hero-buttons">
-                    <a href="UserPortfolio.html" class="btn">View My Projects</a>
-                    <a href="UserAboutMe.html" class="btn-secondary">Learn More About Me</a>
+                <div class="theme-card cv-classic">
+                    <h4>Classic Theme</h4>
+                    <p>Traditional serif fonts and structured sections. Ideal for academic or conservative fields.</p>
+                    <div class="cv-preview">[Preview of CV in classic style]</div>
                 </div>
             </div>
         </section>
 
-        <!-- Portfolio Summary -->
-        <section class="portfolio-overview">
-            <h2>What You'll Find Here</h2>
-
-            <div class="overview-grid">
-
-                <div class="overview-card">
-                    <h3>Projects</h3>
-                    <p>
-                        Explore web development, programming, and academic projects
-                        that demonstrate my technical abilities and problem-solving skills.
-                    </p>
-                </div>
-
-                <div class="overview-card">
-                    <h3>Technical Skills</h3>
-                    <p>
-                        Discover the technologies, tools, and programming languages
-                        I use to bring ideas to life.
-                    </p>
-                </div>
-
-                <div class="overview-card">
-                    <h3>Continuous Growth</h3>
-                    <p>
-                        Follow my learning journey as I expand my knowledge in software
-                        development, cloud technologies, and modern web applications.
-                    </p>
-                </div>
-
-            </div>
+        <!-- Projects Section -->
+        <section class="projects">
+            <h3>Your Projects</h3>
+            <p>Once your CV is uploaded and converted, your themed digital CV will appear here as part of your
+                portfolio.</p>
+            <div class="project-placeholder">No projects yet. Upload your CV to get started!</div>
         </section>
+    </section>
 
-        <!-- Featured Projects -->
-        <section class="featured-projects">
 
-            <h2>Featured Projects</h2>
 
-            <div class="project-card">
-                <h3>Personal Portfolio Website</h3>
-
-                <p>
-                    A responsive portfolio website built using HTML, CSS, JavaScript,
-                    Git, GitHub, and GitHub Pages to showcase my skills and projects.
-                </p>
-            </div>
-
-            <div class="project-card">
-                <h3>Upcoming Projects</h3>
-
-                <p>
-                    Additional projects involving software development,
-                    database systems, and modern web technologies will be
-                    added as they are completed.
-                </p>
-            </div>
-
-            <div class="project-button">
-                <a href="UserPortfolio.html" class="btn">
-                    Explore All Projects
-                </a>
-            </div>
-
-        </section>
-
-        <!-- Current Focus -->
-        <section class="current-focus">
-
-            <h2>Currently Learning</h2>
-
-            <ul>
-                <li>Responsive Web Development</li>
-                <li>JavaScript Programming</li>
-                <li>Git & GitHub Version Control</li>
-                <li>Software Engineering Best Practices</li>
-            </ul>
-
-        </section>
-
-        <!-- Call To Action -->
-        <section class="cta">
-
-            <h2>Let's Explore Together</h2>
-
-            <p>
-                Thank you for visiting my portfolio. Feel free to explore my projects,
-                learn more about my background, and follow my growth in the technology field.
-            </p>
-
-            <a href="UserAboutMe.html" class="btn">
-                Get Started
-            </a>
-
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
-    </footer>
-
-    <script src="JS/Home.js"></script>
+    <script src="USER JS/UserHome.js"></script>
 </body>
 
 </html>

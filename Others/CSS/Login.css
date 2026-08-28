@@ -1,0 +1,103 @@
+
+@import url('Color.css');
+
+
+/* Login Page Styling */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Login page container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+    /* subtract navbar height */
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    padding-top: 60px;
+    /* prevent overlap with navbar */
+}
+
+/* Login box */
+.login-box {
+    background: var(--secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    text-align: center;
+}
+
+.login-box h1 {
+    margin-bottom: 1rem;
+    color: var(--secondary);
+}
+
+.login-box label {
+    display: block;
+    text-align: left;
+    margin: 0.5rem 0 0.2rem;
+    font-weight: bold;
+    color: #444;
+}
+
+.login-box button {
+    width: 100%;
+}
+
+form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 1rem;
+    color: #4682B4;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin: 0.5rem 0 0.2rem;
+    font-weight: bold;
+    color: #444;
+}
+
+input {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+input:focus {
+    border-color: #4682B4;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 0.8rem;
+    background: #FFC0CB;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #FFC0CB;
+}

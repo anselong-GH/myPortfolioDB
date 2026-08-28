@@ -1,38 +1,41 @@
-/* Signup Page Styling */
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #2e89de, #2b24f1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
+@import url('Global.css');
+@import url('Color.css');
+@import url('Responsive.css');
 
-/* Signup page container */
+/*---------------------
+|   SIGNUP CONTAINER   |
+----------------------*/
 .signup-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 60px);
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    /* different gradient */
-    padding-top: 60px;
+    height: calc(100vh - 60px); /* viewport minus navbar */
+    margin-top: 60px;           /* offset for fixed navbar */
+    background: linear-gradient(135deg, #FFC0CB, #C0C0C0);
 }
 
-/* Signup box */
+/*---------------
+|   SIGNUP BOX   |
+----------------*/
 .signup-box {
     background: #fff;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
     width: 360px;
+    max-width: 90%;             /* responsive shrink on small screens */
     text-align: center;
 }
 
-.signup-box h1 {
-    margin-bottom: 1rem;
+/*------------
+|   HEADER   |
+-------------*/
+.signup-header {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
     color: #667eea;
+    text-align: center;
 }
 
 .signup-box label {
@@ -43,33 +46,7 @@ body {
     color: #444;
 }
 
-.signup-box button {
-    width: 100%;
-}
-
-form {
-    background: #fff;
-    padding: 2.5rem;
-    border-radius: 14px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    width: 360px;
-    text-align: center;
-}
-
-h1 {
-    margin-bottom: 1rem;
-    color: #2e89de;
-}
-
-label {
-    display: block;
-    text-align: left;
-    margin: 0.5rem 0 0.2rem;
-    font-weight: bold;
-    color: #555;
-}
-
-input {
+.signup-box input {
     width: 100%;
     padding: 0.8rem;
     margin-bottom: 1rem;
@@ -77,22 +54,26 @@ input {
     border-radius: 10px;
 }
 
-input:focus {
-    border-color: #2e89de;
+.signup-box input:focus {
+    border-color: #FFC0CB;
     outline: none;
 }
 
-button {
+/*------------
+|   BUTTON   |
+-------------*/
+.signup-box button {
     width: 100%;
     padding: 0.9rem;
-    background: #2b24f1;
+    background: #FFC0CB;
     color: #fff;
     border: none;
     border-radius: 10px;
     font-size: 1.1rem;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-button:hover {
-    background: #2e89de;
+.signup-box button:hover {
+    background: #ff99aa;
 }

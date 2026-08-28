@@ -5,36 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Ansel Ong">
-    <title>Portfolio Showcase</title>
+    <title>Career Portfolio Showcase</title>
     <link rel="stylesheet" href="../public/CSS/Home.css">
+    <link rel="stylesheet" href="../public/CSS/Color.css">
 </head>
 
 <body>
+    <!-----------------------------
+     |   PLACEHOLDER: NAV-LINKS   |
+     ------------------------------>
+    <div id="navbar"></div>
 
-    <nav class="navbar">
-        <div class="logo">MewA</div> <!--AMew-->
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="nav-links">
-            <a href="Home.html" class="active">Home</a>
-            <a href="AboutMe.html">About Me</a>
-            <a href="Portfolio.html">Portfolio</a>
-            <a href="Privacy.html">Privacy Policy</a>
-            <a href="Login.html">Login</a>
-            <a href="Signup.html">Sign up</a>
-            <select id="language-select">
-                <option value="en" selected>English</option>
-                <option value="zh">中文</option>
-                <option value="ms">Malay</option>
-            </select>
-        </div>
-    </nav>
 
     <main>
-        <!-- Hero Section -->
+        <!------------------
+        |   HERO SECTION   |
+        -------------------->
         <section class="hero">
             <div class="hero-content">
                 <h1 id="title">Welcome to My Portfolio</h1>
@@ -55,7 +41,9 @@
             </div>
         </section>
 
-        <!-- Portfolio Summary -->
+        <!----------------------
+        |   PORTFOLIO SUMMARY  |
+        ------------------------>
         <section class="portfolio-overview">
             <h2>What You'll Find Here</h2>
 
@@ -88,39 +76,45 @@
             </div>
         </section>
 
-        <!-- Featured Projects -->
+        <!---------------------
+        |   FEATURE PROJECT   |
+        ----------------------->
         <section class="featured-projects">
-
             <h2>Featured Projects</h2>
 
             <div class="project-card">
-                <h3>Personal Portfolio Website</h3>
-
+                <h3>Personal CV Theme preview</h3>
+                <h4 class="sub-header">Demo Mode</h4>
                 <p>
-                    A responsive portfolio website built using HTML, CSS, JavaScript,
-                    Git, GitHub, and GitHub Pages to showcase my skills and projects.
+                    Sign up & Login to upload your CV to see how it can be converted into 
+                    a themed digital CV. This is a preview-only mode. Your CV is not 
+                    permanently stored or shared.
                 </p>
             </div>
 
             <div class="project-card">
                 <h3>Upcoming Projects</h3>
-
+                <h4 class="sub-header">Future Mode</h4>
                 <p>
-                    Additional projects involving software development,
-                    database systems, and modern web technologies will be
-                    added as they are completed.
+                    In the next phrase, your CV will be fully functional as 
+                    digital profile where you can use it right away. You'll
+                    be able to edit, save, modify, and share your CV directly
+                    online as a professional portfolio.
                 </p>
             </div>
 
             <div class="project-button">
-                <a href="Portfolio.html" class="btn">
+                <a href="Login.html" class="btn">
                     Explore All Projects
                 </a>
+                <p class="sub-note">Available after you sign up!!!</p>
             </div>
 
         </section>
 
-        <!-- Current Focus -->
+        <!-------------------
+        |   CURRENT FOCUS   |
+        --------------------->
         <section class="current-focus">
 
             <h2>Currently Learning</h2>
@@ -134,7 +128,9 @@
 
         </section>
 
-        <!-- Call To Action -->
+        <!--------------------
+        |   CALL-TO-ACTION   |
+        ---------------------->
         <section class="cta">
 
             <h2>Let's Explore Together</h2>
@@ -151,18 +147,42 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; <span id="year"></span> -- MewA. All rights reserved.</p>
-    </footer>
+    <!---------
+    |   FAQ   |
+    ----------->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
 
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+        <div class="faq-item">
+            <button class="faq-question">How do I upload files?</button>
+            <div class="faq-answer">You can drag & drop or select files manually using the upload box.</div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Can I preview PDFs?</button>
+            <div class="faq-answer">Yes, PDFs open in a preview window. You can resize the iframe for better
+                readability.</div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Is my portfolio mobile-friendly?</button>
+            <div class="faq-answer">Yes, the layout uses responsive design so it adapts to different screen sizes.</div>
+        </div>
+    </section>
+
+        <!------------------------------------
+        |   PLACEHOLDER: BRANDING/           |
+        |                SOCIAL LINK (ICON/  |
+        |                COPY RIGHT FOOTER   |
+        -------------------------------------->
+        <div id="footer"></div>
 
 
-
-    <script src="../public/JS/Home.js"></script>
-    <script src="../public/JS/Language.js"></script>
+        <!-------------------
+        |   LINKAGE TO JS   |
+        --------------------->
+        <script src="../public/JS/Home.js"></script>
+        <script src="../public/JS/Language.js"></script>
 </body>
 
 </html>

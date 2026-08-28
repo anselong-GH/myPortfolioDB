@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="../docs/CSS/Home.css">
+    <link rel="stylesheet" href="../docs/CSS/UserHome.css">
+    <link rel="stylesheet" href="../docs/CSS/CV.css">
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <h1>Welcome! Upload your CV</h1>
+
+    <!-- CV Upload Form -->
+    <section>
+        <h2>Upload any FILE to preview</h2>
+        <form id="cvForm" enctype="multipart/form-data">
+            <input type="file" name="cv" accept=".pdf,.docx,.txt" required />
+            <button type="submit">Upload</button>
+        </form>
+    </section>
+
+    <div class="container">
+        <h1>Upload any FILE to Preview</h1>
+
+        <div class="upload-box" id="uploadBox">
+            <p>Select/Drag & Drop a file to preview instantly</p>
+            <input type="file" id="fileInput" multiple>
+        </div>
+
+        <!-- Progress Bar -->
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+
+        <div id="preview" class="preview"></div>
+    </div>
+
+    <!-- Theme Selector -->
+    <section>
+        <h2>Choose Theme</h2>
+        <select id="themeSelector">
+            <option value="cv-modern">Modern</option>
+            <option value="cv-creative">Creative</option>
+            <option value="cv-classic">Classic</option>
+        </select>
+    </section>
+
+    <!-- CV Display Container -->
+    <section>
+        <h2>Your Digital CV</h2>
+        <div id="cvContainer" class="cv-modern">
+            <p>Upload a CV to see it displayed here.</p>
+        </div>
+        <button id="downloadBtn">Download as PDF</button>
+    </section>
+
+
+    <!-- html2pdf.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="../docs/JS/CV.js"></script>
+    <script src="../docs/JS/UserHome.js"></script>
+</body>
+
+</html>
