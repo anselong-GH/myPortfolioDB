@@ -27,10 +27,37 @@ function loadNavbar() {
     hamburger.classList.toggle('active'); // animate into X
   });
 
+  // If you still want language selector, keep this
   const langSelect = document.getElementById("language-select");
-  langSelect.addEventListener("change", (e) => {
-    // language switching logic starts here
-    console.log("Language change to:", e.target.value);
-  });
+  if (langSelect) {
+    langSelect.addEventListener("change", (e) => {
+      console.log("Language change to:", e.target.value);
+    });
+  }
 }
 loadNavbar();
+
+// ✅ Backend session check for protected page
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    const response = await fetch("https://your-app.onrender.com/profile", {
+      method: "GET",
+      credentials: "include"
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log("User profile:", data);
+      // Example: show welcome message
+      const welcomeMsg = document.getElementById("welcomeMsg");
+      if (welcomeMsg) {
+        welcomeMsg.textContent = `Welcome, ${data.username}!`;
+      }
+    } else {
+      window.location.href = "Login.html";
+    }
+  } catch (err) {
+    console.error("Profile check failed:", err);
+    window.location.href = "Login.html";
+  }
+});

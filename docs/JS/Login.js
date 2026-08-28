@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         togglePassword.classList.toggle("active");
     });
 
-    loginForm.addEventListener("submit", (e) => {
+    loginForm.addEventListener("submit", async (e) => {
         e.preventDefault();
 
         const username = usernameField.value.trim();
@@ -35,37 +35,46 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        alert(`Welcome back, ${username}!`);
+        try {
+            // ✅ Call your Render backend
+            const response = await fetch("https://your-app.onrender.com/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                credentials: "include", // important for sessions
+                body: JSON.stringify({ username, password })
+            });
 
-        // ✅ Remember Me logic with credentials
-        if (rememberMe.checked) {
-            localStorage.setItem("isLoggedIn", "true");
-            localStorage.setItem("rememberMe", "true");
-            localStorage.setItem("savedUsername", username);
-            localStorage.setItem("savedPassword", password);
-        } else {
-            sessionStorage.setItem("isLoggedIn", "true");
-            localStorage.removeItem("rememberMe");
-            localStorage.removeItem("savedUsername");
-            localStorage.removeItem("savedPassword");
+            const data = await response.json();
+
+            if (response.ok) {
+                alert(`Welcome back, ${username}!`);
+
+                // Remember Me logic
+                if (rememberMe.checked) {
+                    localStorage.setItem("isLoggedIn", "true");
+                    localStorage.setItem("rememberMe", "true");
+                    localStorage.setItem("savedUsername", username);
+                } else {
+                    sessionStorage.setItem("isLoggedIn", "true");
+                    localStorage.removeItem("rememberMe");
+                    localStorage.removeItem("savedUsername");
+                }
+
+                window.location.href = "UserHome.html";
+            } else {
+                alert(data.message || "Login failed");
+            }
+        } catch (err) {
+            console.error("Login error:", err);
+            alert("Server error. Please try again later.");
         }
-
-        window.location.href = "UserHome.html";
     });
 });
-
-// On protected pages
-if (
-    localStorage.getItem("isLoggedIn") !== "true" &&
-    sessionStorage.getItem("isLoggedIn") !== "true"
-) {
-    window.location.href = "Login.html";
-}
 
 // Logout function
 function logout() {
     localStorage.removeItem("isLoggedIn");
     sessionStorage.removeItem("isLoggedIn");
-    // ⚠️ Keep credentials if Remember Me was checked
-    window.location.href = "Login.html";
+    window.location.location.href = "Login.html";
+
 }
