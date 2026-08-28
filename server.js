@@ -44,10 +44,15 @@ app.post('/signup', (req, res) => {
         (err) => {
             if (err) {
                 console.error("Signup error:", err);
-                return res.status(500).send('Error creating user');
+                return res.status(500).json({success: false, error:"Error Creating User"});
             }
             console.log("✅ User created:", username);
-            res.redirect('https://anselong-gh.github.io/myPortfolioDB/Login.html');
+
+            res.json({
+                success: true,
+                redirect:'https://anselong-gh.github.io/myPortfolioDB/Login.html'
+            });     
+            
         }
     );
 });
