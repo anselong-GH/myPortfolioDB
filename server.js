@@ -14,12 +14,10 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Serve static files (adjust folder if needed)
-app.use(express.static(__dirname + '/docs'));
-
 // Enable CORS for GitHub Pages frontend
 app.use(cors({
-    origin: "https://anselong-gh.github.io/myPortfolioDB",
+    origin: ["https://anselong-gh.github.io/myPortfolioDB",
+             "https://anselong-gh.github.io"],
     credentials: true
 }));
 
