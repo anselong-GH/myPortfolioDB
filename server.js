@@ -14,7 +14,7 @@ const fs = require('fs'); // file system module - read/write files
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(__dirname + '/public')); //change bk to */docs* when go live
+app.use(express.static(__dirname + '/docs')); //change bk to */docs* when go live
 
 app.use(session({
     secret: "secret-key",
