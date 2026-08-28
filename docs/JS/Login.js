@@ -37,16 +37,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             // ✅ Call your Render backend
-            const response = await fetch("https://your-app.onrender.com/login", {
+            const response = await fetch("https://mewa-backend.onrender.com/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 credentials: "include", // important for sessions
-                body: JSON.stringify({ username, password })
+                body: JSON.stringify({ username, password, rememberMe: rememberMe.checked })
             });
 
             const data = await response.json();
 
-            if (response.ok) {
+            if (data.success) {
                 alert(`Welcome back, ${username}!`);
 
                 // Remember Me logic
@@ -60,9 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     localStorage.removeItem("savedUsername");
                 }
 
-                window.location.href = "UserHome.html";
+                window.location.href = data.redirect; // use backend-provided redirect
             } else {
-                alert(data.message || "Login failed");
+                alert(data.error || "Login failed");
+                if (data.redirect) window.location.href = data.redirect;
             }
         } catch (err) {
             console.error("Login error:", err);
@@ -75,6 +76,5 @@ document.addEventListener("DOMContentLoaded", () => {
 function logout() {
     localStorage.removeItem("isLoggedIn");
     sessionStorage.removeItem("isLoggedIn");
-    window.location.location.href = "Login.html";
-
+    window.location.href = "Login.html"; // ✅ fixed typo
 }

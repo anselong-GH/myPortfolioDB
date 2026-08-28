@@ -1,28 +1,39 @@
-
 // *********************************DEPENDENCIES************************************
 const express = require('express'); // build routes
 const bcrypt = require('bcryptjs'); // hashing pw securely before storing
 const session = require('express-session'); // manage user sessions (keep users logged in upon request)
+const cors = require('cors'); // allow cross-domain requests
 const db = require('./database'); // your MySQL connection file
 const multer = require('multer'); // handling file uploads
 const pdfParse = require('pdf-parse'); // extract text from pdf
 const mammoth = require('mammoth'); // extract text from docs
-const fs = require('fs'); // file system module - read/write files 
-
+const fs = require('fs'); // file system module - read/write files
 
 // *************************************APP SETUP***********************************
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(__dirname + '/docs')); //change bk to */docs* when go live
 
-app.use(session({
-    secret: "secret-key",
-    resave: false,
-    saveUninitialized: true,
-    cookie: { maxAge: 1000 * 60 * 60 } // 1 hour session
+// Serve static files (adjust folder if needed)
+app.use(express.static(__dirname + '/docs'));
+
+// Enable CORS for GitHub Pages frontend
+app.use(cors({
+    origin: "https://anselong-gh.github.io/myPortfolioDB",
+    credentials: true
 }));
 
+// Session setup (secure for cross-domain)
+app.use(session({
+    secret: process.env.SESSION_SECRET || "secret-key",
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        maxAge: 1000 * 60 * 60, // 1 hour
+        sameSite: "none",
+        secure: true
+    }
+}));
 
 // **********************************Signup Route***********************************
 app.post('/signup', (req, res) => {
@@ -38,12 +49,12 @@ app.post('/signup', (req, res) => {
                 return res.status(500).send('Error creating user');
             }
             console.log("✅ User created:", username);
-            res.redirect('/Login.html');
+            res.redirect('https://anselong-gh.github.io/myPortfolioDB/Login.html');
         }
     );
 });
 
-// *****************************Login Route (with MFA trigger)**********************
+// *****************************Login Route***********************************
 app.post('/login', (req, res) => {
     const { username, password, rememberMe } = req.body;
     db.query('SELECT * FROM user WHERE Username = ?', [username], (err, results) => {
@@ -51,25 +62,22 @@ app.post('/login', (req, res) => {
             console.error("Login error:", err);
             return res.status(500).send('Error');
         }
-        if (results.length === 0) return res.redirect('/Login.html?error=User+not+found');
+        if (results.length === 0) {
+            return res.redirect('https://anselong-gh.github.io/myPortfolioDB/Login.html?error=User+not+found');
+        }
 
         const user = results[0];
         if (bcrypt.compareSync(password, user.Password_Hash)) {
             req.session.user = user;
 
-            // **********Remember Me: extend cookie if checked**********************
             if (rememberMe) {
                 req.session.cookie.maxAge = 1000 * 60 * 60 * 24 * 7; // 7 days
             }
 
-            // **************MFA step (simulate sending OTP)************************
-            const otp = Math.floor(100000 + Math.random() * 900000); // 6-digit code
-            req.session.otp = otp;
-            console.log("📩 MFA OTP for user:", otp); // In real app, send via email/SMS
-
-            res.redirect('/verify-otp');
+            // ✅ No OTP — go straight to dashboard
+            res.redirect('https://anselong-gh.github.io/myPortfolioDB/Dashboard.html');
         } else {
-            res.redirect('/Login.html?error=Invalid+password');
+            res.redirect('https://anselong-gh.github.io/myPortfolioDB/Login.html?error=Invalid+password');
         }
     });
 });
@@ -77,12 +85,12 @@ app.post('/login', (req, res) => {
 // **********************************CV PAGE*****************************************
 app.get('/CV', (req, res) => {
     if (!req.session.user) {
-        return res.redirect("/Login.html");
+        return res.redirect("https://anselong-gh.github.io/myPortfolioDB/Login.html");
     }
-    res.sendFile(__dirname + '/public/CV.html');
+    res.redirect("https://anselong-gh.github.io/myPortfolioDB/CV.html");
 });
+
 // **********************************UPDATE ABOUT ME**********************************
-// Show saved profile on UserProject page
 app.get('/UserAboutMe', (req, res) => {
     if (!req.session.user) return res.status(401).send('Not logged in');
 
@@ -110,8 +118,6 @@ app.get('/UserAboutMe', (req, res) => {
     );
 });
 
-
-// Save profile changes from About Me page
 app.post('/UserAboutMe', (req, res) => {
     if (!req.session.user) return res.status(401).send('Not logged in');
 
@@ -135,9 +141,7 @@ app.post('/UserAboutMe', (req, res) => {
     );
 });
 
-
 // **********************************CV UPLOAD**************************************
-
 const upload = multer({ dest: 'uploads/' });
 
 app.post('/uploadCV', upload.single('cv'), async (req, res) => {
@@ -192,14 +196,12 @@ app.post('/uploadCV', upload.single('cv'), async (req, res) => {
         console.error("CV upload error:", err);
         res.status(500).send({ error: 'Failed to parse CV' });
     } finally {
-        // Clean up uploaded file to avoid clutter
         fs.unlink(filePath, (unlinkErr) => {
-            if (unlinkErr) {
-                console.error("File cleanup error:", unlinkErr);
-            }
+            if (unlinkErr) console.error("File cleanup error:", unlinkErr);
         });
     }
 });
+
 // ***********************************FETCH CV*************************************
 app.get('/getCV', (req, res) => {
     if (!req.session.user) return res.status(401).send('Not logged in');
@@ -213,7 +215,6 @@ app.get('/getCV', (req, res) => {
     );
 });
 
-
 // ********************************Logout Route*************************************
 app.get('/logout', (req, res) => {
     req.session.destroy((err) => {
@@ -221,11 +222,10 @@ app.get('/logout', (req, res) => {
             console.error("Logout error:", err);
             return res.status(500).send("Error logging out");
         }
-        res.redirect('/Logout.html');
+        res.redirect('https://anselong-gh.github.io/myPortfolioDB/Logout.html');
     });
 });
 
-
 // ********************************START SERVER**************************************
-
-app.listen(3000, () => console.log('Server running on http://localhost:3000'));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

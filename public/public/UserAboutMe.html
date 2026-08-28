@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="CSS/Home.css">
+    <link rel="stylesheet" href="User CSS/UserHome.css">
+    <link rel="stylesheet" href="User CSS/UserAboutMe.css">
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <section id="aboutMe">
+        <h2 class="section-header">About Me</h2>
+
+        <p contenteditable="true" id="userName">John Doe</p>
+        <p contenteditable="true" id="careerTitle">Software Engineer</p>
+        <p contenteditable="true" id="careerDesc">Passionate about building responsive web apps...</p>
+
+        <div>
+            <h3>Skills</h3>
+            <ul id="skillsList">
+                <li contenteditable="true">HTML</li>
+                <li contenteditable="true">CSS</li>
+            </ul>
+            <button id="addSkillBtn">+ Add Skill</button>
+        </div>
+
+        <div>
+            <h3>Work Experience</h3>
+            <ul id="workExpList">
+                <li contenteditable="true">Frontend Developer at TechCorp (2024–2026)</li>
+            </ul>
+            <button id="addWorkBtn">+ Add Experience</button>
+        </div>
+
+        <div>
+            <h3>Achievements / Awards</h3>
+            <ul id="achievementsList">
+                <li contenteditable="true">Dean’s List 2024</li>
+            </ul>
+            <button id="addAchBtn">+ Add Achievement</button>
+        </div>
+
+        <button id="saveProfileBtn">Save Profile</button>
+    </section>
+
+
+    <script src="User JS/UserHome.js"></script>
+    <script src="User JS/UserAboutMe.js"></script>
+</body>
+
+</html>

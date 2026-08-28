@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             // ✅ Call your Render backend
-            const response = await fetch("https://your-app.onrender.com/signup", {
+            const response = await fetch("https://mewa-backend.onrender.com/signup", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 credentials: "include", // important for sessions
@@ -38,11 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const data = await response.json();
 
-            if (response.ok) {
+            if (data.success) {
                 alert("Signup successful! You can now log in.");
-                window.location.href = "Login.html"; // redirect to login page
+                window.location.href = data.redirect; // use backend-provided redirect
             } else {
-                alert(data.message || "Signup failed");
+                alert(data.error || "Signup failed");
             }
         } catch (err) {
             console.error("Signup error:", err);
